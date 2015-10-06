@@ -36,8 +36,11 @@ ActiveRecord::Schema.define(version: 20150906145531) do
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "users", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
     t.string   "name"
-    t.string   "email"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.string   "password_digest"
@@ -49,7 +52,5 @@ ActiveRecord::Schema.define(version: 20150906145531) do
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

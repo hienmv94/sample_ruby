@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-google-oauth2'
+
+gem 'omniauth-facebook'
 
 gem 'bootstrap-sass',       '3.2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

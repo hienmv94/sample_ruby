@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
 
-  root              'static_pages#home'
-  get 'help'      => 'static_pages#help'
-  get 'about'     => 'static_pages#about'
-  get 'contact'   => 'static_pages#contact'
-  get 'signup'    => 'users#new'
-  get 'login'     => 'sessions#new'
-  post 'login'    => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  resources :sessions, only: [:create, :destroy]
+  resource :home, only: [:show]
+
+  root to: "home#show"
+ 
+ 
   resources :users do
     member do
       get :following, :followers
