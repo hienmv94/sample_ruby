@@ -1,6 +1,6 @@
 <% provide(:title, "Home") %>
 
-<% if logged_in? %>
+<% if current_user %>
     <div class="row">
       <aside class="col-md-4">
 
@@ -32,7 +32,9 @@
     sample application.
   </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <h1>Home</h1>
+  <p><b>AND</b> Login with Google Account and Facbook Account</p>
+  <p>Hope you enjoy !</p>
 </div>
 
 <%= link_to image_tag("rails.png", alt: "Rails logo"),
