@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   get    'help'    => 'static_pages#help'
   get    'about'   => 'static_pages#about'
   get    'contact' => 'static_pages#contact'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
   
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
@@ -20,8 +18,6 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :account_activations, only: [:edit]
-  resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
 end
