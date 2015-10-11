@@ -245,11 +245,17 @@ input {
 /* microposts */
 
 .microposts {
+  float: left;
   list-style: none;
   padding: 0;
+
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
+    
+  }
+  ul {
+    float: left;
   }
   .user {
     margin-top: 5em;
