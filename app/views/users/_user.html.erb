@@ -4,6 +4,6 @@
   
   <% if current_user.admin? && !current_user.eql?(user) %>
      | <%= link_to "Delete", user, method: :DELETE,
-                    data: { confirm: "You sure?" } %>
+                    data: { confirm: "You sure delete ?" } %>
   <% end %>
 </li>
