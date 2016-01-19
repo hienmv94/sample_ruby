@@ -1,16 +1,9 @@
-
+<% unless current_user?(@user) %>
 <div id="follow_form">
-<<<<<<< HEAD
- <% if !current_user.eql?(@user) %>
-=======
->>>>>>> 15298440aa10799c39e70298299644a3183c23a5
   <% if current_user.following?(@user) %>
       <%= render 'unfollow' %>
   <% else %>
       <%= render 'follow' %>
   <% end %>
-<<<<<<< HEAD
-<% end %>  
-=======
->>>>>>> 15298440aa10799c39e70298299644a3183c23a5
 </div>
+<% end %>
