@@ -10,4 +10,3 @@ if Rails.env.production?
     config.fog_directory     =  'http://samplerubyhienmv.s3-website-ap-northeast-1.amazonaws.com'
   end
 end
-
